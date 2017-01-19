@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to Markdownify!</h2>
+  <ion-item>
+    <ion-label>Convert to Markdown</ion-label>
+    <ion-toggle color="secondary" [(ngModel)]="toggleVal" checked="toggleVal" (ionChange)="convert()"></ion-toggle>
+  </ion-item>
+  <ion-item [hidden]="toggleVal">
+    <ion-textarea rows="6" [(ngModel)]="plainText"  placeholder="Strat writing your markdown below..."></ion-textarea>
+  </ion-item>
+  <ion-content [hidden]="!toggleVal">
+    <div [innerHtml]="content"></div>
+  </ion-content>
+
+</ion-content>
